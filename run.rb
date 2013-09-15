@@ -1,3 +1,4 @@
+require './childrens_price.rb'
 require './customer.rb'
 
 customer = Customer.new('Paul')
@@ -10,3 +11,11 @@ puts customer.statement
 
 puts customer.html_statement
 
+puts "--------------------"
+movie = Movie.new("Spiderman", Movie::CHILDRENS)
+rental = Rental.new(movie, 4)
+customer.add_rental(rental)
+
+puts customer.statement
+
+puts customer.html_statement
